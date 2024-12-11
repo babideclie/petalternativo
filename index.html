@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="android-chrome-192x192.png" type="image/x-icon">
+    <title>Pet Alternativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+            <div class="container">
+                <div class="tab_box">
+                    <button class="tab_btn">Sobre</button>
+                    <button class="tab_btn">Serviços</button>
+                    <button class="tab_btn">Loja</button>
+                    <button class="tab_btn">Contato</button>
+                    <div class="line"></div>
+                </div>
+
+                <div class="content_box">
+                    <div class="content">
+                        <h2>Sobre</h2>
+                        <p>Na Pet Alternativo, acreditamos que todo pet merece um estilo único e encantador! Somos uma loja especializada na venda de laços e gravatas feitos especialmente para pets, trazendo charme e sofisticação e bom preço para nossos clientes. Nosso objetivo é proporcionar acessórios de alta qualidade, confortáveis e cheios de personalidade, que combinam com o estilo e a energia do seu amigo de quatro patas.</p>
+                    </div>
+
+                    <div class="content">
+                        <h2>Serviços</h2>
+                        <p>Além de fornecer ao cliente diversos tipos de acessórios para sua loja, também trabalhamos com serviços como: <br> Identidade Visual <br> Estratégias de Marketing para seu PetShop</p>
+                    </div>
+
+                    <div class="content">
+                        <h2>Loja</h2>
+                        <p>Quer conhecer mais sobre os nossos produtos? Então <a href="https://lojapetalternativo.site/" target="_blank" rel="external">CLIQUE AQUI</a></p>
+                    </div>
+
+                    <div class="content">
+                        <h2>Contato</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque exercitationem voluptates nemo dolores maxime nam porro dolore, reiciendis dolorem quidem facere voluptas ad assumenda dignissimos, asperiores sint iure temporibus modi!</p>
+                    </div>
+                </div>
+
+            </div>
+
+        <script>
+            const tabs= document.querySelectorAll('.tab_btn');
+            const all_content= document.querySelectorAll('.content');
+
+            tabs.forEach((tab, index)=>{
+                tab.addEventListener('click', (e)=>{
+                    tabs.forEach(tab=>{tab.classList.remove('active')});
+                    tab.classList.add('active');
+
+                    var line=document.querySelector('.line');
+                line.style.width = e.target.offsetWidth + "px";
+                line.style.left = e.target.offsetLeft + "px";
+
+                all_content.forEach(content=>{content.classList.remove('active')});
+                all_content[index].classList.add('active');
+                })
+            })
+        </script>
+
+</body>
+</html>
